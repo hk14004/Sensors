@@ -25,14 +25,7 @@ class PedometerVC: UIViewController {
     
     override func viewDidLoad() {
         pedometerVM.delegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         pedometerVM.start()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        pedometerVM.stop()
     }
     
     @IBAction func onResetPressed(_ sender: UIButton) {
