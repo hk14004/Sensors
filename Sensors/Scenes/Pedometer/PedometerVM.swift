@@ -15,6 +15,8 @@ class PedometerVM {
     private let cMPedometer = CMPedometer()
     
     func start() {
+        delegate?.userStateChanged(isMoving: false)
+        delegate?.distanceChanged(meters: 0)
         trackUserState()
         trackDistance()
     }
