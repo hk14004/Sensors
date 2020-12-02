@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s9G-1D-vVB">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pedometer-->
+        <scene sceneID="68W-xY-VQh">
+            <objects>
+                <viewController id="FR4-zw-Vli" customClass="PedometerVC" customModule="Sensors" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MaZ-5U-o0P">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nBv-N7-Ujd">
+                                <rect key="frame" x="91.333333333333329" y="279.33333333333331" width="231.33333333333337" height="177.33333333333331"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meters Traveled" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkK-7r-opb" userLabel="Traveled Title">
+                                        <rect key="frame" x="0.0" y="0.0" width="231.33333333333334" height="40.666666666666664"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LY-gT-2Kr">
+                                        <rect key="frame" x="0.0" y="40.666666666666686" width="231.33333333333334" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walking State" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ueo-3z-L78" userLabel="Walking State Title">
+                                        <rect key="frame" x="0.0" y="88.666666666666686" width="231.33333333333334" height="40.666666666666657"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Still" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZ0-BQ-r6Q" userLabel="Walking State Label">
+                                        <rect key="frame" x="0.0" y="129.33333333333337" width="231.33333333333334" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxK-mj-Ttk" userLabel="Reset button">
+                                <rect key="frame" x="177" y="633" width="60" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="cz1-IG-jZ2"/>
+                                </constraints>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onResetPressed:" destination="FR4-zw-Vli" eventType="touchUpInside" id="2je-xm-jBC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HPJ-x0-Zbt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hxK-mj-Ttk" firstAttribute="centerX" secondItem="MaZ-5U-o0P" secondAttribute="centerX" id="49H-PR-nwd"/>
+                            <constraint firstItem="HPJ-x0-Zbt" firstAttribute="bottom" secondItem="hxK-mj-Ttk" secondAttribute="bottom" constant="20" id="K38-uW-P3J"/>
+                            <constraint firstItem="nBv-N7-Ujd" firstAttribute="centerY" secondItem="MaZ-5U-o0P" secondAttribute="centerY" id="kut-jJ-Y4q"/>
+                            <constraint firstItem="nBv-N7-Ujd" firstAttribute="centerX" secondItem="MaZ-5U-o0P" secondAttribute="centerX" id="zVH-4j-Blw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pedometer" image="figure.walk" catalog="system" id="hCp-DK-MZd"/>
+                    <connections>
+                        <outlet property="resetButton" destination="hxK-mj-Ttk" id="uc3-mz-yOn"/>
+                        <outlet property="traveledLabel" destination="3LY-gT-2Kr" id="qcN-y5-1cQ"/>
+                        <outlet property="walkingStateLebel" destination="BZ0-BQ-r6Q" id="105-w5-Stj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ib6-BY-XtL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-624.63768115942037" y="226.63043478260872"/>
+        </scene>
+        <!--Accelerometer-->
+        <scene sceneID="cMZ-oz-5tB">
+            <objects>
+                <viewController id="QHg-Kc-ww6" customClass="AccelerometerVC" customModule="Sensors" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cMq-2w-zHj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="3wg-0Q-y0U">
+                                <rect key="frame" x="10" y="666.66666666666663" width="404" height="20.333333333333371"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rL-l6-Wdq">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="20.333333333333332"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="nYO-UK-OaD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.83766084910000005" green="0.51524418589999998" blue="0.61528986689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5x-ls-9LB">
+                                        <rect key="frame" x="167" y="0.0" width="70" height="20.333333333333332"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="JkE-KL-eF6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.63255542519999997" green="0.71373575929999999" blue="0.47755998370000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="z" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGc-yA-O3m">
+                                        <rect key="frame" x="334" y="0.0" width="70" height="20.333333333333332"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="nU6-vi-Kwc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.3655949235" green="0.48853260279999999" blue="0.6789791584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="device" translatesAutoresizingMaskIntoConstraints="NO" id="GJf-gW-8TZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Enq-26-4kN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3wg-0Q-y0U" firstAttribute="leading" secondItem="Enq-26-4kN" secondAttribute="leading" constant="10" id="9Zy-n0-UIL"/>
+                            <constraint firstAttribute="trailing" secondItem="3wg-0Q-y0U" secondAttribute="trailing" id="FzB-Fa-qed"/>
+                            <constraint firstItem="Enq-26-4kN" firstAttribute="bottom" secondItem="3wg-0Q-y0U" secondAttribute="bottom" id="GKV-y8-XCl"/>
+                            <constraint firstItem="GJf-gW-8TZ" firstAttribute="top" secondItem="Enq-26-4kN" secondAttribute="top" id="TdH-Fb-87z"/>
+                            <constraint firstItem="GJf-gW-8TZ" firstAttribute="leading" secondItem="Enq-26-4kN" secondAttribute="leading" id="eCn-Ea-QzQ"/>
+                            <constraint firstItem="GJf-gW-8TZ" firstAttribute="bottom" secondItem="Enq-26-4kN" secondAttribute="bottom" id="moS-pZ-BSL"/>
+                            <constraint firstItem="GJf-gW-8TZ" firstAttribute="trailing" secondItem="Enq-26-4kN" secondAttribute="trailing" id="u4g-GD-HLj"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Accelerometer" image="speedometer" catalog="system" id="L3F-W7-x27"/>
+                    <connections>
+                        <outlet property="xPositionLabel" destination="0rL-l6-Wdq" id="77h-AX-BKZ"/>
+                        <outlet property="yPositionLabel" destination="H5x-ls-9LB" id="XVi-QA-l9I"/>
+                        <outlet property="zPositionLabel" destination="uGc-yA-O3m" id="S8r-ec-zCL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pyv-ab-dRu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-624.63768115942037" y="-381.52173913043481"/>
+        </scene>
+        <!--Sensosrs-->
+        <scene sceneID="S4A-O1-X7G">
+            <objects>
+                <tabBarController title="Sensosrs" id="s9G-1D-vVB" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g8J-q3-bdw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="QHg-Kc-ww6" kind="relationship" relationship="viewControllers" id="mrL-dG-WgP"/>
+                        <segue destination="FR4-zw-Vli" kind="relationship" relationship="viewControllers" id="eKl-bb-JTv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Pq-W7-Kc3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1514" y="-77"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="device" width="770" height="880"/>
+        <image name="figure.walk" catalog="system" width="95" height="128"/>
+        <image name="speedometer" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
